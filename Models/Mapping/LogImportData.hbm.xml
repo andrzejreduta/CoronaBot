@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CoronaBot" namespace="CoronaBot.Models">
+  <class name="LogImportData" table="log_import_data" schema="dbo">
+    <id name="Id" type="Int64">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="BIGINT" unique="true" />
+      <generator class="identity" />
+    </id>
+
+    <property name="DateCreated" type="DateTime">
+      <column name="date_created" not-null="true" sql-type="DATETIME" />
+    </property>
+    
+    <property name="RegionName" type="String">
+      <column name="region_name" not-null="false" length="128" sql-type="NVARCHAR(128)" />
+    </property>
+
+    <property name="SourceName" type="String">
+      <column name="source_name" not-null="false" length="128" sql-type="NVARCHAR(128)" />
+    </property>
+
+    <property name="CasesTotal" type="Int32">
+      <column name="cases_total" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+    <property name="CasesNew" type="Int32">
+      <column name="cases_new" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+    <property name="DeathsTotal" type="Int32">
+      <column name="deaths_total" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+    <property name="DeathsNew" type="Int32">
+      <column name="deaths_new" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+    <property name="RecoveredTotal" type="Int32">
+      <column name="recovered_total" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+    <property name="Active" type="Int32">
+      <column name="active" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+    <property name="ActiveCritical" type="Int32">
+      <column name="active_critical" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+    <property name="RatioCasesTo1M" type="Int32">
+      <column name="ratio_casesto1m" not-null="true" precision="10" scale="0" sql-type="INT" />
+    </property>
+
+  </class>
+</hibernate-mapping>

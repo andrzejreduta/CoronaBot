@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<hibernate-mapping xmlns="urn:nhibernate-mapping-2.2" assembly="CoronaBot" namespace="CoronaBot.Models">
+  <class name="LogImportScheduler" table="log_import_scheduler" schema="dbo">
+    <id name="Id" type="Int64">
+      <column name="id" not-null="true" precision="19" scale="0" sql-type="BIGINT" unique="true" />
+      <generator class="identity" />
+    </id>
+
+    <property name="DateCreated" type="DateTime">
+      <column name="date_created" not-null="true" sql-type="DATETIME" />
+    </property>
+
+    <property name="Result" type="String">
+      <column name="result" not-null="false" length="32" sql-type="NVARCHAR(128)" />
+    </property>
+
+    <property name="SourceName" type="String">
+      <column name="source_name" not-null="false" length="128" sql-type="NVARCHAR(128)" />
+    </property>
+
+  </class>
+</hibernate-mapping>
